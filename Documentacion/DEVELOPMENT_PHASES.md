@@ -8,15 +8,15 @@ Este documento define las fases de desarrollo para construir el proyecto GymFlow
 
 | Fase | Duración Estimada |       Objetivo Principal                  |    Estado    |
 |------|-------------------|-------------------------------------------|--------------|
-| 1    | 1-2 días          | Configuración del proyecto                |     [ ]      |
-| 2    | 2-3 días          | Capa de Dominio                           |     [ ]      |
-| 3    | 2-3 días          | Capa de Aplicación (Use Cases)            |     [ ]      |
-| 4    | 3-4 días          | Capa de Infraestructura - Persistencia    |     [ ]      |
-| 5    | 2-3 días          | Capa de Infraestructura - Web (API)       |     [ ]      |
+| 1    | 1-2 días          | Configuración del proyecto                |     [x]      |
+| 2    | 2-3 días          | Capa de Dominio                           |     [x]      |
+| 3    | 2-3 días          | Capa de Aplicación (Use Cases)            |     [x]      |
+| 4    | 3-4 días          | Capa de Infraestructura - Persistencia    |     [x]      |
+| 5    | 2-3 días          | Capa de Infraestructura - Web (API)       |     [x]      |
 | 6    | 1-2 días          | Testing y Validación                      |     [ ]      |
 | 7    | 1 día             | Documentación final                       |     [ ]      |
 
-### **Total estimado: 12 a 18 días** | **Progreso: 0/7 fases (0%)**
+### **Total estimado: 12 a 18 días** | **Progreso: 5/7 fases (71%)**
 
 ---
 
@@ -28,18 +28,18 @@ Montar el esqueleto del proyecto Spring Boot con todas las dependencias necesari
 
 ### Tareas
 
-- [ ] **F1-T1** Crear proyecto Maven
+- [x] **F1-T1** Crear proyecto Maven
   - Generar proyecto desde Spring Initializr o manualmente
   - Configurar `pom.xml` con dependencias
 
-- [ ] **F1-T2** Configurar application.yml
+- [x] **F1-T2** Configurar application.yml
   - Conexión a PostgreSQL (desarrollo)
   - Configuración JPA/Hibernate
 
-- [ ] **F1-T3** Estructurar paquetes
+- [x] **F1-T3** Estructurar paquetes
   - Crear estructura de directorios hexagonal
 
-- [ ] **F1-T4** Verificar entorno
+- [x] **F1-T4** Verificar entorno
   - Compilar proyecto vacío
   - Verificar conexión a BD
 
@@ -57,17 +57,17 @@ Implementar el núcleo de negocio sin dependencias externas.
 
 ### F2-Tareas
 
-- [ ] **F2-T1** Value Objects
+- [x] **F2-T1** Value Objects
   - `EstadoSocio` (enum: ACTIVO, INACTIVO, BLOQUEADO)
   - `Email` (validación de formato)
   - `SocioId` (UUID)
 
-- [ ] **F2-T2** Entidades
+- [x] **F2-T2** Entidades
   - `Socio` (id, email, nombre, estado, fechas)
   - `Suscripcion` (id, socioId, fechaInicio, fechaFin, estado)
   - `Pago` (id, socioId, monto, estado)
 
-- [ ] **F2-T3** Reglas de Negocio (en entidades)
+- [x] **F2-T3** Reglas de Negocio (en entidades)
   - Validar email único en constructor
   - Verificar estado para acceso
 
@@ -91,17 +91,18 @@ Implementar la lógica de negocio orquestando el dominio.
 
 ### F3-Tareas
 
-- [ ] **F3-T1** Puertos de Entrada (Interfaces)
+- [x] **F3-T1** Puertos de Entrada (Interfaces)
   - `RegistrarSocioUseCase`
   - `RenovarSuscripcionUseCase`
   - `VerificarAccesoUseCase`
 
-- [ ] **F3-T2** Puertos de Salida (Interfaces)
+- [x] **F3-T2** Puertos de Salida (Interfaces)
   - `SocioRepository`
   - `SuscripcionRepository`
   - `NotificationService`
+  - `PagoRepository`
 
-- [ ] **F3-T3** Implementaciones de Use Cases
+- [x] **F3-T3** Implementaciones de Use Cases
   - `RegistrarSocioUseCaseImpl`
   - `RenovarSuscripcionUseCaseImpl`
   - `VerificarAccesoUseCaseImpl`
@@ -128,25 +129,27 @@ Implementar adaptadores de persistencia con JPA y PostgreSQL.
 
 ### F4-Tareas
 
-- [ ] **F4-T1** Entidades JPA
+- [x] **F4-T1** Entidades JPA
   - `SocioEntity` (mapeo a tabla `socios`)
   - `SuscripcionEntity` (mapeo a tabla `suscripciones`)
   - `PagoEntity` (mapeo a tabla `pagos`)
 
-- [ ] **F4-T2** Repositories Spring Data
+- [x] **F4-T2** Repositories Spring Data
   - `SocioJpaRepository`
   - `SuscripcionJpaRepository`
   - `PagoJpaRepository`
 
-- [ ] **F4-T3** Mappers (Dominio ↔ Entity)
+- [x] **F4-T3** Mappers (Dominio ↔ Entity)
   - `SocioMapper`
   - `SuscripcionMapper`
+  - `PagoMapper`
 
-- [ ] **F4-T4** Adaptadores de Repositorio
+- [x] **F4-T4** Adaptadores de Repositorio
   - `SocioRepositoryAdapter` (implementa `SocioRepository`)
   - `SuscripcionRepositoryAdapter`
+  - `PagoRepositoryAdapter`
 
-- [ ] **F4-T5** Servicio de Notificación
+- [x] **F4-T5** Servicio de Notificación
   - `NotificationServiceAdapter` (implementa `NotificationService`)
   - Implementación inicial por consola (Log)
 
@@ -164,22 +167,21 @@ Exponer los casos de uso mediante API REST.
 
 ### F5-Tareas
 
-- [ ] **F5-T1** DTOs de Request
+- [x] **F5-T1** DTOs de Request
   - `RegistrarSocioRequest`
-  - `RenovarSuscripcionRequest`
 
-- [ ] **F5-T2** DTOs de Response
+- [x] **F5-T2** DTOs de Response
   - `SocioResponse`
   - `SuscripcionResponse`
   - `VerificarAccesoResponse`
 
-- [ ] **F5-T3** Controladores REST
+- [x] **F5-T3** Controladores REST
   - `SocioController`
 
-- [ ] **F5-T4** Configuración de Beans
+- [x] **F5-T4** Configuración de Beans
   - `BeanConfiguration` (inyectar dependencias)
 
-- [ ] **F5-T5** Manejo de Errores
+- [x] **F5-T5** Manejo de Errores
   - Exception Handler para respuestas 400, 404, 409
 
 ### Endpoints a implementar

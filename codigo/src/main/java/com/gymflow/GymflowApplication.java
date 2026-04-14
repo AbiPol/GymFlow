@@ -1,4 +1,4 @@
-package com.example.gymflow;
+package com.gymflow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
