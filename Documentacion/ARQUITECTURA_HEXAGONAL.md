@@ -337,13 +337,13 @@ los adaptadores conocen al dominio, no al revés
 ## 📝 Resumen de Reglas
 
 | Regla                                        | Descripción                               |
-|------------------------------------------- --|-------------------------------------------|
-| ✅ El **Dominio** no conoce a nadie         | No imports de frameworks                  |
-| ✅ Los **Puertos** son interfaces           | Solo contratos, sin implementación        |
-| ✅ Los **Adaptadores** implementan puertos  | Conocen al dominio, no al revés           |
-| ✅ Los **Use Cases** orquestan              | Sin lógica de negocio, solo coordinación  |
-| ❌ No annotatear el Dominio                 | Sin `@Service`, `@Repository`, `@Entity`   |
-| ❌ No inyección en Dominio                  | El dominio no conoce Spring                |
+|----------------------------------------------|-------------------------------------------|
+| ✅ El **Dominio** no conoce a nadie          | No imports de frameworks                  |
+| ✅ Los **Puertos** son interfaces            | Solo contratos, sin implementación        |
+| ✅ Los **Adaptadores** implementan puertos   | Conocen al dominio, no al revés           |
+| ✅ Los **Use Cases** orquestan               | Sin lógica de negocio, solo coordinación  |
+| ❌ No annotatear el Dominio                  | Sin `@Service`, `@Repository`, `@Entity`  |
+| ❌ No inyección en Dominio                   | El dominio no conoce Spring               |
 
 ---
 
