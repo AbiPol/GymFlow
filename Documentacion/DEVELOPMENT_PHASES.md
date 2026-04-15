@@ -13,10 +13,10 @@ Este documento define las fases de desarrollo para construir el proyecto GymFlow
 | 3    | 2-3 días          | Capa de Aplicación (Use Cases)            |     [x]      |
 | 4    | 3-4 días          | Capa de Infraestructura - Persistencia    |     [x]      |
 | 5    | 2-3 días          | Capa de Infraestructura - Web (API)       |     [x]      |
-| 6    | 1-2 días          | Testing y Validación                      |     [ ]      |
-| 7    | 1 día             | Documentación final                       |     [ ]      |
+| 6    | 1-2 días          | Testing y Validación                      |     [x]      |
+| 7    | 1 día             | Documentación final                       |     [x]      |
 
-### **Total estimado: 12 a 18 días** | **Progreso: 5/7 fases (71%)**
+### **Total estimado: 12 a 18 días** | **Progreso: 7/7 fases (100%)** ✅
 
 ---
 
@@ -206,21 +206,25 @@ Verificar que el sistema funciona correctamente.
 
 ### F6-Tareas
 
-- [ ] **F6-T1** Tests Unitarios (Dominio)
+- [x] **F6-T1** Tests Unitarios (Dominio)
   - Tests de entidades y value objects
   - Tests de reglas de negocio
+  - 32 tests implementados (Email, SocioId, Socio, Suscripcion, Pago)
 
-- [ ] **F6-T2** Tests de Use Cases
+- [x] **F6-T2** Tests de Use Cases
   - Tests de lógica de aplicación
   - Mock de puertos de salida
+  - 15 tests (RegistrarSocio: 4, RenovarSuscripcion: 5, VerificarAcceso: 6)
 
-- [ ] **F6-T3** Tests de Integración (API)
+- [x] **F6-T3** Tests de Integración (API)
   - Tests de controladores
   - Uso de H2 en memoria
+  - 6 tests de SocioController
 
-- [ ] **F6-T4** Pruebas Manuales
-  - Verificar endpoints con Postman/curl
+- [x] **F6-T4** Pruebas Manuales
+  - Verificar endpoints con curl
   - Casos de éxito y error
+  - Documento MANUAL_TESTS.md creado
 
 ### Cobertura objetivo
 
@@ -241,24 +245,26 @@ Completar la documentación del proyecto.
 
 ### F7-Tareas
 
-- [ ] **F7-T1** README.md
-  - Descripción del proyecto
-  - Instrucciones de instalación
-  - Guía de uso de API
+- [x] **F7-T1** README.md
+  - Descripción del proyecto ✅
+  - Instrucciones de instalación ✅
+  - Guía de uso de API ✅
 
-- [ ] **F7-T2** Documentación API
-  - Swagger/OpenAPI (opcional)
+- [x] **F7-T2** Documentación API
+  - Endpoints documentados en README.md ✅
 
-- [ ] **F7-T3** Revisión final
-  - Verificar coherencia entre documentos
-  - Revisar convenciones de código
+- [x] **F7-T3** Revisión final
+  - Verificar coherencia entre documentos ✅
+  - Revisar convenciones de código ✅
 
 ### F7-Entregable
 
 - PROJECT_REQUIREMENTS.md ✅
 - TECHNICAL_SPECIFICATIONS.md ✅
-- DEVELOPMENT_PHASES.md (este documento)
-- README.md
+- DEVELOPMENT_PHASES.md ✅
+- TESTING_PLAN.md ✅
+- MANUAL_TESTS.md ✅
+- README.md ✅ (completado)
 
 ---
 

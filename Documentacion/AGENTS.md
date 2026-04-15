@@ -71,17 +71,17 @@ src/main/java/com/gymflow/
 
 ### 2. Naming Conventions
 
-| Element | Convention | Example |
-|---------|------------|---------|
-| Packages | lowercase, singular | `com.gymflow.domain.model` |
-| Classes | UpperCamelCase | `Socio`, `RegistrarSocioUseCase` |
-| Interfaces | UpperCamelCase | `SocioRepository`, `NotificationService` |
-| Methods | lowerCamelCase | `registrarSocio()`, `findByEmail()` |
-| Variables | lowerCamelCase | `socio`, `fechaInicio` |
-| Constants | UPPER_SNAKE_CASE | `ESTADO_ACTIVO`, `DEFAULT_PAGE_SIZE` |
-| Entities (JPA) | Entity suffix | `SocioEntity`, `SuscripcionEntity` |
-| DTOs | Request/Response suffix | `RegistrarSocioRequest`, `SocioResponse` |
-| Tests | Test suffix | `SocioServiceTest`, `SocioControllerTest` |
+| Element        | Convention              | Example                                  |
+|----------------|-------------------------|------------------------------------------|
+| Packages       | lowercase, singular     | `com.gymflow.domain.model`               |
+| Classes        | UpperCamelCase          | `Socio`, `RegistrarSocioUseCase`         |
+| Interfaces     | UpperCamelCase          | `SocioRepository`, `NotificationService` |
+| Methods        | lowerCamelCase          | `registrarSocio()`, `findByEmail()`      |
+| Variables      | lowerCamelCase          | `socio`, `fechaInicio`                   |
+| Constants      | UPPER_SNAKE_CASE        | `ESTADO_ACTIVO`, `DEFAULT_PAGE_SIZE`     |
+| Entities (JPA) | Entity suffix           | `SocioEntity`, `SuscripcionEntity`       |
+| DTOs           | Request/Response suffix | `RegistrarSocioRequest`, `SocioResponse` |
+| Tests          | Test suffix             | `SocioServiceTest`, `SocioControllerTest`|
 
 ### 3. Imports
 
@@ -171,11 +171,11 @@ public ErrorResponse handleEmailDuplicado(EmailDuplicadoException ex) {
 
 ### 7. Layer Responsibilities
 
-| Layer | Responsibility | Examples |
-|-------|---------------|----------|
-| Domain | Business logic, entities, rules | `Socio`, `EstadoSocio` enum |
-| Application | Orchestration, use cases | `RegistrarSocioUseCaseImpl` |
-| Infrastructure | External concerns | `SocioEntity`, REST Controllers |
+| Layer          | Responsibility                  | Examples                                      |
+|----------------|----------------|----------------|-----------------------------------------------|
+| Domain         | Business logic, entities, rules | `Socio`, `EstadoSocio` enum                   |
+| Application    | Orchestration, use cases        | `RegistrarSocioUseCaseImpl`                   |
+| Infrastructure | External concerns               | `SocioEntity`, REST Controllers, Repositories |
 
 **Important:** Domain layer must NOT depend on Spring or any framework.
 
@@ -205,6 +205,11 @@ void testRegistrarSocio_EmailDuplicado_ThrowsExcepcion() {
 - Document DTOs with field descriptions
 - Keep README.md updated with setup instructions
 
+### 10. Incio de sesion
+
+- Leer el archivo DEVELOPMENT_PHASES.md antes de empezar a trabajar
+- Si te pido informarme de donde estamos en el desarrollo, responde con la fase actual y lo que nos queda por hacer
+  
 ---
 
 ## 🔧 Project Configuration
@@ -265,3 +270,4 @@ spring:
 6. **ALWAYS** follow the package structure defined above
 7. **ALWAYS** use Javadoc for public APIs
 8. **ALWAYS** follow the package structure defined above
+9. **ALWAYS** leer el archivo DEVELOPMENT_PHASES.md antes de empezar a trabajar
